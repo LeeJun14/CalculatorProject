@@ -24,22 +24,51 @@ public class Calculator {
         }
     }
 
+    public enum OperatorType {
+        PLUS() {
+            @Override
+            public int apply(int a, int b) {
+                return a + b;
+            }
+        },
+        MINUS() {
+            @Override
+            public int apply(int a, int b) {
+                return a - b;
+            }
+        },
+        MULTIPLY() {
+            @Override
+            public int apply(int a, int b) {
+                return a * b;
+            }
+        },
+        DIVIDE() {
+            @Override
+            public int apply(int a, int b) {
+                return a / b;
+            }
+        };
+
+        public abstract int apply(int a, int b);
+    }
+
     public Integer calculate(int a, int b, char Operator) {
         Integer result = null;
 
         switch (Operator) {
             case '+':
-                result = a + b;
+                result = OperatorType.PLUS.apply(a, b);
                 setItem(result);
                 break;
 
             case  '-':
-                result = a - b;
+                result = OperatorType.MINUS.apply(a, b);
                 setItem(result);
                 break;
 
             case   '*':
-                result = a * b;
+                result = OperatorType.MULTIPLY.apply(a, b);
                 setItem(result);
                 break;
 
@@ -48,7 +77,7 @@ public class Calculator {
                     System.out.println("나눗셈 연산에서 분모에 0이 입력될 수 없습니다.");
                     return null;
                 } else {
-                    result = a / b;
+                    result = OperatorType.DIVIDE.apply(a, b);
                     setItem(result);
                     break;
                 }
