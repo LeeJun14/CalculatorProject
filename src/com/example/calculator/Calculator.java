@@ -7,19 +7,50 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int result = 0;
-        String reseltMessage = "";
+        boolean flag = true;
+
+        while (true) {
+            System.out.print("첫 번째 값을 입력해주세요: ");
+            int a = sc.nextInt();
+            System.out.print("두 번째 값을 입력해주세요: ");
+            int b = sc.nextInt();
+            System.out.print("연산기호를 선택해주세요: ");
+            char Operator = sc.next().charAt(0);
+
+            switch (Operator) {
+                case '+':
+                    result = a + b;
+                    break;
+
+                case  '-':
+                    result = a - b;
+                    break;
+
+                case  '*':
+                    result = a * b;
+                    break;
+
+                case '/':
+                    if(b == 0) {
+                        flag = false;
+                        System.out.println("나눗셈 연산에서 분모에 0이 입력될 수 없습니다.");
+                    } else {
+                        result = a / b;
+                        break;
+                    }
 
 
-        System.out.print("첫 번째 값을 입력해주세요: ");
-        int a = sc.nextInt();
-        System.out.print("두 번째 값을 입력해주세요: ");
-        int b = sc.nextInt();
-        System.out.print("연산기호를 선택해주세요: ");
-        char Operator = sc.next().charAt(0);
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
-        System.out.println("Operator = " + Operator);
-
-
+                default:
+                    System.out.println("유효하지 않은 연산기호입니다.");
+                    flag = false;
+                    break;
+            }
+            if(!flag) {
+                continue;
+            } else {
+                System.out.println(result);
+                break;
+            }
+        }
     }
 }
