@@ -7,7 +7,6 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int result = 0;
-        boolean flag = true;
 
         while (true) {
             System.out.print("첫 번째 값을 입력해주세요: ");
@@ -16,6 +15,8 @@ public class Calculator {
             int b = sc.nextInt();
             System.out.print("연산기호를 선택해주세요: ");
             char Operator = sc.next().charAt(0);
+
+            boolean flag = true;
 
             switch (Operator) {
                 case '+':
@@ -49,7 +50,13 @@ public class Calculator {
                 continue;
             } else {
                 System.out.println(result);
+            }
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            String exit = sc.next();
+            if(exit.equals("exit")) {
                 break;
+            } else {
+                flag = false;
             }
         }
     }
