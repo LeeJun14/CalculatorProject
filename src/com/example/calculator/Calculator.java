@@ -5,24 +5,39 @@ import java.util.ArrayList;
 public class Calculator {
     ArrayList<Integer> list = new ArrayList<Integer>();
 
-    public int calculate(int a, int b, char Operator) {
+    public Integer calculate(int a, int b, char Operator) {
+        Integer result = null;
+
         switch (Operator) {
             case '+':
-                list.add(a + b);
+                result = a + b;
+                list.add(result);
                 break;
 
             case  '-':
-                list.add(a - b);
+                result = a - b;
+                list.add(result);
                 break;
 
             case   '*':
-                list.add(a * b);
+                result = a * b;
+                list.add(result);
                 break;
 
             case  '/':
-                list.add(a / b);
-                break;
+                if(b == 0) {
+                    System.out.println("나눗셈 연산에서 분모에 0이 입력될 수 없습니다.");
+                    return null;
+                } else {
+                    result = a / b;
+                    list.add(result);
+                    break;
+                }
+
+            default:
+                System.out.println("유효하지 않은 연산기호입니다.");
+                return null;
         }
-        return list.get(list.size()-1);
+        return result;
     }
 }
