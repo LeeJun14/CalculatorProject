@@ -21,12 +21,19 @@ public class App {
 
             if(result != null) {
                 System.out.println(result);
+                calc.printItem();
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
             if(exit.equals("exit")) {
                 break;
+            } else {
+                System.out.println("제일 오래된 값을 제거하시겠습니까? (yes 입력 시 제거)");
+                String del =  sc.next();
+                if(del.equals("yes")) {
+                    calc.deleteItem();
+                }
             }
         }
         sc.close();

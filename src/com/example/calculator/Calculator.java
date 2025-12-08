@@ -1,9 +1,28 @@
 package com.example.calculator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Calculator {
-    ArrayList<Integer> list = new ArrayList<Integer>();
+    private List<Integer> list = new ArrayList<Integer>();
+
+    public List<Integer> getItem() {
+        return list;
+    }
+
+    public void setItem(Integer item) {
+        list.add(item);
+    }
+
+    public void deleteItem() {
+        list.remove(0);
+    }
+
+    public void printItem() {
+        for (Integer item : list) {
+            System.out.println("현재 연산 목록: " + item);
+        }
+    }
 
     public Integer calculate(int a, int b, char Operator) {
         Integer result = null;
@@ -11,17 +30,17 @@ public class Calculator {
         switch (Operator) {
             case '+':
                 result = a + b;
-                list.add(result);
+                setItem(result);
                 break;
 
             case  '-':
                 result = a - b;
-                list.add(result);
+                setItem(result);
                 break;
 
             case   '*':
                 result = a * b;
-                list.add(result);
+                setItem(result);
                 break;
 
             case  '/':
@@ -30,7 +49,7 @@ public class Calculator {
                     return null;
                 } else {
                     result = a / b;
-                    list.add(result);
+                    setItem(result);
                     break;
                 }
 
