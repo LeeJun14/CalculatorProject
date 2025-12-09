@@ -1,6 +1,5 @@
 package com.example.calculator;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -29,15 +28,19 @@ public class App {
             String exit = sc.next();
             if(exit.equals("exit")) {
                 break;
-            } else {
-                System.out.println("제일 오래된 값을 제거하시겠습니까? (yes 입력 시 제거)");
-                String del =  sc.next();
-                if(del.equals("yes")) {
-                    calc.deleteItem();
-                }
             }
 
-
+            System.out.println("제일 오래된 값을 제거하시겠습니까? (yes 입력 시 제거)");
+            String del =  sc.next();
+            if(del.equals("yes")) {
+                calc.deleteItem();
+            }
+            System.out.println("입력받은 값보다 큰 저장된 값을 출력하시겠습니까? (yes 입력 시 출력)");
+            String printBigger = sc.next();
+            if (printBigger.equals("yes")) {
+                Number c = calc.getInput(sc, "값을 입력해주세요: ");
+                calc.getItem().stream().filter(x -> x.doubleValue() > c.doubleValue()).forEach(x -> System.out.println("입력 값보다 큰 값 목록: " + x));
+            }
         }
         sc.close();
     }

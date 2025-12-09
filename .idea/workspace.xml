@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b9ce15a-6db7-4e53-8fd9-a9bfd7e10884" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CalculatorProject/com/example/calculator/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CalculatorProject/com/example/calculator/Calculator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/calculator/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/calculator/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/calculator/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/calculator/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +91,7 @@
       <workItem from="1764814043627" duration="1208000" />
       <workItem from="1764915974280" duration="9171000" />
       <workItem from="1765162561170" duration="20472000" />
-      <workItem from="1765238189975" duration="11095000" />
+      <workItem from="1765238189975" duration="16709000" />
     </task>
     <servers />
   </component>
