@@ -1,23 +1,24 @@
 package com.example.calculator;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calc = new Calculator();
+        Calculator<Number> calc = new Calculator();
 
         while (true) {
-            System.out.print("첫 번째 값을 입력해주세요: ");
-            int a = sc.nextInt();
-            System.out.print("두 번째 값을 입력해주세요: ");
-            int b = sc.nextInt();
+            Number a = calc.getInput(sc, "첫 번째 값을 입력해주세요: ");
+            Number b = calc.getInput(sc, "두 번째 값을 입력해주세요: ");
             System.out.print("연산기호를 선택해주세요: ");
             char Operator = sc.next().charAt(0);
 
 
-            Integer result = calc.calculate(a, b, Operator);
+            Number result = calc.calculate(a, b, Operator);
 
             if(result != null) {
                 System.out.println(result);
@@ -35,6 +36,8 @@ public class App {
                     calc.deleteItem();
                 }
             }
+
+
         }
         sc.close();
     }
