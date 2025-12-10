@@ -25,6 +25,9 @@ public class Calculator<T extends Number> {
 
     public void printItem() {
         for (T item : list) {
+            if(list.isEmpty()) {
+                System.out.println("현재 연산된 값이 존재하지 않습니다.");
+            }
             System.out.println("현재 연산 목록: " + item);
         }
     }
