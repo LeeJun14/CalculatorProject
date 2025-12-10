@@ -3,7 +3,7 @@ package com.example.calculator;
 import java.util.Scanner;
 
 public class App {
-
+    // 재사용 가능한 스캐너 메서드
     public static Number getInput(Scanner sc, String message) {
         while (true) {
             System.out.print(message);
@@ -19,9 +19,11 @@ public class App {
     }
 
     public static void main(String[] args) {
+        // 객체 생성
         Scanner sc = new Scanner(System.in);
         Calculator<Number> calc = new Calculator();
 
+        // 입력 및 출력
         while (true) {
             Number a = getInput(sc, "첫 번째 값을 입력해주세요: ");
             Number b = getInput(sc, "두 번째 값을 입력해주세요: ");
