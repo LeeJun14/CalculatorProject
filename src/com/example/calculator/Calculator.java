@@ -16,7 +16,11 @@ public class Calculator<T extends Number> {
     }
 
     public void deleteItem() {
+        if(list.isEmpty()) {
+            System.out.println("삭제할 값이 없습니다.");
+        }
         list.remove(0);
+        System.out.println("값이 삭제되었습니다.");
     }
 
     public void printItem() {
