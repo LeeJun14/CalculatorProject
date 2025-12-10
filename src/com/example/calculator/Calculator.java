@@ -23,7 +23,7 @@ public class Calculator<T extends Number> {
         System.out.println("값이 삭제되었습니다.");
     }
 
-    public void printItem() {
+    public void printItems() {
         for (T item : list) {
             if(list.isEmpty()) {
                 System.out.println("현재 연산된 값이 존재하지 않습니다.");

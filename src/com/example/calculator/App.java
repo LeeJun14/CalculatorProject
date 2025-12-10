@@ -1,7 +1,5 @@
 package com.example.calculator;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -21,7 +19,7 @@ public class App {
 
             if(result != null) {
                 System.out.println(result);
-                calc.printItem();
+                calc.printItems();
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
@@ -40,6 +38,22 @@ public class App {
             if (printBigger.equals("yes")) {
                 Number c = calc.getInput(sc, "값을 입력해주세요: ");
                 calc.getItem().stream().filter(x -> x.doubleValue() > c.doubleValue()).forEach(x -> System.out.println("입력 값보다 큰 값 목록: " + x));
+            }
+            System.out.println("특정 인덱스의 값을 확인하시겠습니까? (yes 입력 시 배열 선택)");
+            String printSmaller = sc.next();
+            if (printSmaller.equals("yes")) {
+                System.out.print("몇 번째 인덱스을 가져오시겠습니까: ");
+                int choiceValue = sc.nextInt();
+
+                try {
+                    Number number = calc.getItem().get(choiceValue);
+                    if(number != null) {
+                        System.out.println(choiceValue + " 번째 인덱스의 값은: " + number);
+                    }
+                }  catch (IndexOutOfBoundsException e) {
+                    System.out.println("선택하신 인덱스는 아직 값이 들어오지 않았습니다.");
+                }
+
             }
         }
         sc.close();
