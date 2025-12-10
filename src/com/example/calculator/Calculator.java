@@ -72,20 +72,6 @@ public class Calculator<T extends Number> {
         public abstract <T extends Number> Number apply(T a, T b);
     }
 
-    public Number getInput(Scanner sc, String message) {
-        while (true) {
-            System.out.print(message);
-            if(sc.hasNextInt()) {
-                return sc.nextInt();
-            } else if(sc.hasNextDouble()) {
-                return sc.nextDouble();
-            } else {
-                System.out.println("유효하지 않은 입력입니다.");
-                sc.next();
-            }
-        }
-    }
-
     public Number calculate(Number a, Number b, char Operator) {
         T result = null;
 
